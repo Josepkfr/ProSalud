@@ -11,7 +11,7 @@ const pool=new Pool(database)
 
 const getProducts=async()=>{
     try {
-        const res=await pool.query('select * from producto')
+        const res=await pool.query('select * from pedido_producto')
         console.log(res.rows)
     } catch (error) {
         console.log(error)
