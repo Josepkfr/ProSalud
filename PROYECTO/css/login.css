@@ -1,0 +1,122 @@
+
+
+body {
+	background: url(../img/fondoL.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	margin: 0;
+	font-family: monospace;
+}
+
+/* body::before {
+	content: "";
+	width: 100%;
+	min-height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: linear-gradient(blue, rgb(8, 168, 241));
+	opacity: 0.5;
+	z-index: -1;
+} */
+
+.login-box {
+	width: 320px;
+	height: auto;
+	border: 2px solid;
+	box-shadow: 0px 0px 20px 0px black;
+	color: #fff;
+	top: 50%;
+	left: 25%;
+	position: absolute;
+	transform: translate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 50px 50px;
+	border-radius: 50px;
+}
+
+.login-box .avatar {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	position: absolute;
+	top: -60px;
+	left: calc(50% - 50px);
+}
+
+.login-box h1 {
+	margin: 0;
+	padding: 0 0 50px;
+	text-align: center;
+	font-size: 25px;
+
+}
+
+.login-box label {
+	margin: 0;
+	padding: 2;
+	font-weight: bold;
+	display: block;
+	padding: 2px;
+	font-size: 20px;
+}
+
+.login-box input {
+	width: 100%;
+	margin-bottom: 20px;
+	border-radius: 50px;
+}
+
+.login-box input[type="text"],
+.login-box input[type="password"] {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 20px;
+	color: #fff;
+	font-size: 16px;
+}
+
+.login-box input[type="submit"] {
+	border: none;
+	outline: none;
+	background: red;
+	color: #fff;
+	font-size: 20px;
+	padding: 10px;
+}
+
+.login-box input[type="button"] {
+	border: none;
+	outline: none;
+	height: 20px;
+	background: #1700FF;
+	color: rgb(20, 233, 20);
+	font-size: 18px;
+	border-radius: 20px;
+}
+
+.login-box a {
+	text-decoration: none;
+	font-size: 15px;
+	line-height: 20px;
+	color: bisque;
+}
+
+.login-box a:hover {
+	color: black;
+}
+
+
+
+.bad {
+	background: rgb(231, 54, 54);
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+.footer {
+	background-color: black;
+	color: #fff;
+}
