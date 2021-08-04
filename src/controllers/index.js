@@ -1,7 +1,8 @@
-const db = require('../dataBase/index')
+const db = require('../models/products')
+const user = require('./user')
 
-const controller={}
-controller.list= async (req,res)=>{
+const controller={user}
+controller.list= async (req,res,next)=>{
     try {
         const { rows }= await db.getProducts()
         console.log(rows)

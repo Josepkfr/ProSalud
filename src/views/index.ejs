@@ -11,18 +11,7 @@
 </head>
 
 <body>
-    <header>
-        <a class="logo" href="#"><img src="img/logoPro.png" class="logo" alt="logo"></a>
-        <nav>
-            <ul class="nav__links">
-                <li><a href="#">Servicios</a></li>
-                <li><a href="#">Algo</a></li>
-                <li><a href="#">Nosotros</a></li>
-            </ul>
-        </nav>
-        <a class="cta" href="/login">iniciar sesion</a>
-        <p class="menu cta">Menu</p>
-    </header>
+    <%- include('components/header'); %>
     <div class="overlay">
         <a class="close">&times;</a>
         <div class="overlay__content">
@@ -61,13 +50,7 @@
             voluptatum harum quibusdam animi impedit eveniet!</div>
         <div class="elemento"><img class="elemento-img" src="img/page3.png" alt="logo"></div>
     </div>
-    <footer>
-        <div class="pie">
-            <div class="column">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, quia.</div>
-            <div class="column">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus, assumenda!</div>
-            <div class="column">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, explicabo.</div>
-        </div>
-    </footer>
+    <%- include('components/footer'); %>
 
     <script type="text/javascript" src="js/movil.js"></script>
 </body>

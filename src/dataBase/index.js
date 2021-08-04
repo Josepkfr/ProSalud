@@ -8,19 +8,8 @@ const database={
     port:"5432"
 }
 const pool=new Pool(database)
+pool.connect()
+.then(()=>console.log("Database connected"))
+.catch(error=>console.log("Error al conectarse",error.stack))
 
-module.exports = {
-    query(text, params){
-      return pool.query(text, params, callback)
-    },
-    
-    async getProducts(){
-        try {
-            res = await pool.query('select * from producto')
-            return res
-        } catch (error) {
-            console.log(error)
-        }
-    }
-}
-
+module.exports=pool;

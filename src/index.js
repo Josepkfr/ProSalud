@@ -1,8 +1,8 @@
 const express= require('express');
 const morgan = require('morgan');
-const pg = require('pg')
 const path = require('path')
 const routes = require('./routes/index')
+const userRoutes = require('./routes/user')
 
 const app = express();
 //settings
@@ -13,9 +13,11 @@ app.set('views',path.join(__dirname,'views'));
 
 //midlewares
 app.use(morgan('dev'))
+app.use(express.urlencoded({extended:false}));
 
 //rutas
 app.use('/',routes)
+app.use('/user',userRoutes)
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname,'public')));
