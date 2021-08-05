@@ -29,6 +29,8 @@ module.exports = {
 
     async registerUser({cedula,nombre,direccion,telefono,fecha,email,password}){
         try {
+            const hash = await bcrypt.hashSync(password,10)
+            password=hash
             const sql = format('insert into usuario values (%L,%L,%L,%L,%L,%L,%L)',cedula,nombre,direccion,telefono,fecha,email,password)
             user = await conexion.query(sql)
             return user.rows[0]
