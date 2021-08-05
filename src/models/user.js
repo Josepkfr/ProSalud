@@ -25,5 +25,15 @@ module.exports = {
         } catch (error) {
             console.log(error)
         }
+    },
+
+    async registerUser({cedula,nombre,direccion,telefono,fecha,email,password}){
+        try {
+            const sql = format('insert into usuario values (%L,%L,%L,%L,%L,%L,%L)',cedula,nombre,direccion,telefono,fecha,email,password)
+            user = await conexion.query(sql)
+            return user.rows[0]
+        } catch (error) {
+            return error
+        }
     }
 }
