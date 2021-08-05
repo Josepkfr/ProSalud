@@ -13,9 +13,9 @@ header {
   align-items: center;
   padding: 30px 10%;
   background-color: #24252a;
-  /* change to original color  */
   position: fixed;
   width: 100%;
+  z-index: 100;
 }
 
 .logo {
@@ -142,7 +142,7 @@ header {
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (max-width: 800px) {
   header {
     display: flex;
     width: 100%;
