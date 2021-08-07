@@ -1,9 +1,11 @@
 const express= require('express');
 const morgan = require('morgan');
-const pg = require('pg')
 const path = require('path')
-const app = express();
+const routes = require('./routes/index')
+const userRoutes = require('./routes/user')
+const productsRoutes = require('./routes/products')
 
+const app = express();
 //settings
 app.set('port',process.env.PORT || 3000);
 //motor de plantillas
@@ -12,10 +14,12 @@ app.set('views',path.join(__dirname,'views'));
 
 //midlewares
 app.use(morgan('dev'))
+app.use(express.urlencoded({extended:false}));
 
-app.get('/',(req,res)=>{
-    res.render("index",{titulo:'titulo dinamico'})
-})
+//rutas
+app.use('/',routes)
+app.use('/user',userRoutes)
+app.use('/products',productsRoutes)
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname,'public')));
