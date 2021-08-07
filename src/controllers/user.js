@@ -9,8 +9,7 @@ const User = {
             if (user) {
                 const compare = await bcrypt.compareSync(req.body.password, user.password)
                 if (compare) {
-                    console.log(req.body.password)
-                    res.send("hola")
+                    res.redirect('/products')
                 } else {
                     res.send("contraseña Incorrecta")
                 }
@@ -36,7 +35,7 @@ const User = {
             let todayDate = new Date().toISOString().slice(0, 10);
             req.body.fecha = todayDate
             const user = await userModel.registerUser(req.body)
-            res.render("user/login")
+            res.redirect('/user/login')
             return user
         } catch (error) {
             res.render("error")

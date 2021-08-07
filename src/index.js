@@ -3,6 +3,7 @@ const morgan = require('morgan');
 const path = require('path')
 const routes = require('./routes/index')
 const userRoutes = require('./routes/user')
+const productsRoutes = require('./routes/products')
 
 const app = express();
 //settings
@@ -18,6 +19,7 @@ app.use(express.urlencoded({extended:false}));
 //rutas
 app.use('/',routes)
 app.use('/user',userRoutes)
+app.use('/products',productsRoutes)
 
 //archivos estaticos
 app.use(express.static(path.join(__dirname,'public')));
