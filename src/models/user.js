@@ -11,7 +11,7 @@ module.exports = {
     async getUsers() {
         try {
             res = await conexion.query('select * from usuario')
-            return res
+            return res.rows
         } catch (error) {
             console.log(error)
         }
@@ -19,7 +19,17 @@ module.exports = {
 
     async getUser(email) {
         try {
-            const sql = format('select nombre,email,password from usuario where email = %L', email)
+            const sql = format('select * from usuario where email = %L', email)
+            user = await conexion.query(sql)
+            return user.rows[0]
+        } catch (error) {
+            console.log(error)
+        }
+    },
+
+    async getUserById(cedula) {
+        try {
+            const sql = format('select * from usuario where cedula = %L', cedula)
             user = await conexion.query(sql)
             return user.rows[0]
         } catch (error) {
@@ -29,11 +39,11 @@ module.exports = {
 
     async registerUser({cedula,nombre,direccion,telefono,fecha,email,password}){
         try {
-            const hash = await bcrypt.hashSync(password,10)
+            const hash = bcrypt.hashSync(password,10)
             password=hash
             const sql = format('insert into usuario values (%L,%L,%L,%L,%L,%L,%L)',cedula,nombre,direccion,telefono,fecha,email,password)
-            user = await conexion.query(sql)
-            return user.rows[0]
+            await conexion.query(sql) 
+            return  await getUser(email)         
         } catch (error) {
             return error
         }
