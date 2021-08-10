@@ -2,14 +2,19 @@ const userModel = require('../models/user')
 const bcrypt = require('bcrypt')
 
 
-const User = {
+const user = {
 
     async userLogin(req, res) {
-        res.render('user/login')
+        return res.render('user/login')
     },
 
     async userRegister(req, res) {
-        res.render('user/register')
+        return res.render('user/register')
+    },
+
+    async userLogout(req, res, next) {
+        req.logout();
+        return res.redirect('/');
     },
 
     async register(req, res) {
@@ -26,4 +31,4 @@ const User = {
     }
 }
 
-module.exports = User
+module.exports = user

@@ -7,6 +7,7 @@ const productsRoutes = require('./routes/products')
 const passport = require('passport')
 const cookieParser= require('cookie-parser')
 const session = require('express-session')
+const flash = require('connect-flash');
 
 //initializations
 
@@ -31,10 +32,16 @@ app.use(session({
     resave:true,
     saveUninitialized:true
 }))
+app.use(flash())
 
 //passport
 app.use(passport.initialize());
 app.use(passport.session());
+app.use((req, res, next) => {
+    app.locals.loginMessage = req.flash('loginMessage');
+    app.locals.user = req.user;
+    next();
+  });
 
 //rutas
 app.use('/',routes)

@@ -11,7 +11,8 @@
 <body>
     <header class="titulo">
         <img src="/img/LogoProSalud.png" alt="">
-        <h1>"Mejoramos tu salud con nuestros productos"</h2>
+        <h1>"Mejoramos tu salud con nuestros productos"</h1>
+        <h2>Bienvenido <%=user.nombre%></h2>
     </header>
     
     <nav>
@@ -22,50 +23,13 @@
     </nav>
 
     <div class="container">
-        <div>
-            <img src="/img/descarga (1).jpg" alt="">
-        <h1>Pescado</h1>
-        </div>
-    
-        <div>
-            <img src="/img/descarga (2).jpg" alt="">
-        <h1>Avena</h1>
-        </div>
-
-        <div>
-            <img src="/img/descarga (3).jpg" alt="">
-        <h1>Cereal</h1>
-        </div>
-
-        <div>
-            <img src="/img/descarga (4).jpg" alt="">
-        <h1>Granos</h1>
-        </div>
-
-        <div>
-            <img src="/img/descarga.jpg" alt="">
-        <h1>Lacteos</h1>
-        </div>
-
-        <div>
-            <img src="/img/images (1).jpg" alt="">
-        <h1>Frutas</h1>
-        </div>
-
-        <div>
-            <img src="/img/images (2).jpg" alt="">
-        <h1>Verduras</h1>
-        </div>
-
-        <div>
-            <img src="/img/images (5).jpg" alt="">
-        <h1>Dulces Sanos</h1>
-        </div>
-
-        <div>
-            <img src="/img/images.jpg" alt="">
-        <h1>Enlatados</h1>
-        </div>
+        <% products.forEach(function (product) { %>
+                <div>
+                    <img src="/img/<%=product.foto%>" class="card-img-top" alt="prueba">
+                    <h2><%= product.nombre%></h2>
+                </div>
+                <% }) %>
+     
     </div>
     <footer>
         <a href="#">Sobre Nosotros</a> 

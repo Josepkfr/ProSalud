@@ -11,14 +11,17 @@ passport.use('login', new LocalStrategy({
 },
     async (req, email, password, done) => {
         const user = await userModel.getUser(email)
-        const compare = bcrypt.compareSync(password, user.password)
-        if (!user) {
-            return done(null, false)
+        if (user) {
+            const compare = bcrypt.compareSync(password, user.password)
+            if (!compare) {
+                return done(null, false, req.flash('loginMessage','Password Incorrect'));
+            }
+            else{
+                return done(null, user);
+            }
         }
-        if (!compare) {
-            return done(null, false);
-        }
-        return done(null, user);
+        return done(null, false, req.flash('loginMessage','No user Found'))
+        
     }
 ));
 
