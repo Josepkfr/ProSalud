@@ -21,7 +21,12 @@ header {
 .logo {
   cursor: pointer;
   height: 2.8rem;
+  text-decoration: none;
+  font-size: 20px;
+  color:white;
 }
+
+
 
 .nav__links a,
 .cta,
@@ -219,18 +224,45 @@ header {
 
 
 /* pie de pagina donde va contacto y todo eso */
+/* footer a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+}
+footer a:hover, footer a:active, footer a:focus {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none; */
+/* } */
 
-.pie {
-  border: 2px solid;
-  padding: 10px;
+footer{
+  background-color:rgb(0, 0, 0,0.9);
+  clear: both;
+  text-align: right;
+}
+footer a{
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+  text-align: right;
+  line-height: 50px;
+  font-weight: 300;
+  text-decoration: none;
+  margin-right: 15px;
+  padding: 20px;
+  font-style: italic;
+}
+footer p{
+  color: rgb(253, 247, 247);
+  font-size: 15px;
+  line-height: 40px;
+  font-weight: 300;
+  margin-right: 10px;
+  padding: 20px;
+  
+}
+.container-footer{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: space-around;
-  height: auto;
-  background-color: #24252a;
-  color: white;
+  justify-content: center;
+  align-content: center;
+  align-items: baseline;
 }
 
 .column {

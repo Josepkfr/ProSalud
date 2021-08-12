@@ -5,97 +5,37 @@ html {
 *{
    margin: 2px;
    padding: 2px;
+   box-sizing: border-box;
 }
 
-body {
-    background: url(/img/fondoL.png) no-repeat center top;
+/* body {
+    background: #085078; 
+background: -webkit-linear-gradient(to right, #85D8CE, #085078);  
+background: linear-gradient(to right, #85D8CE, #085078); 
     background-size: cover;
     color: black;
     align-items: center;
     font-family: 'Lato', sans-serif;
-}
+} */
 
-.titulo{
-    background: rgb(4, 172, 184);
-}
-
-header {
-    color: #fff;
-    font-size: 20px ;
-    text-align: center ;
-    line-height: 50px; 
-}
-
-header h1{
-    color: #fff;
-    font-size: 30px ;
-    text-align: center ;
-    line-height: 130px; 
-}
-
-nav{
-    background: rgb(172, 226, 208);
-    height: 50px;
-    text-align: right;
-    padding: 30px 40px 0 0;
-    border-radius: 2.5%;
-}
-nav a{
-    color: black;
-    font-size: 30px;
-    line-height: 60px;
-    font-weight: 300;
-    text-decoration: none;
-    margin-right: 10px;
-    font-style: italic;
-    text-align: right;
-}
-nav > a:hover{
-    color:#fff ;
-}
-
-.container{
+.container-grid{
+    padding: 8rem;
     display: grid;
-    grid-template-columns: 32% 32% 32%;
-    grid-template-rows: 300px 300px 300px;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-template-rows: repeat(3,1fr);
     gap: 1em;
 }
-
-.container div {
-    background: #fcfcfc;
+.container-grid img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+/* .container-grid div {
     padding: 1em;
 }
 
-.container div:hover {
+.container-grid div:hover {
     border: 1px solid #0f97f1;
-}
+} */
 
-footer{
-    background-color:rgb(172, 226, 208);
-    clear: both;
-    text-align: right;
-    padding: 30px 40px 0 0;
-    border-radius: 2.5%;
-}
-footer a{
-    color: black;
-    font-size: 20px;
-    text-align: right;
-    line-height: 50px;
-    font-weight: 300;
-    text-decoration: none;
-    margin-right: 10px;
-    padding: 20px;
-    font-style: italic;
-}
-footer p{
-    color: black;
-    font-size: 20px;
-    line-height: 40px;
-    font-weight: 300;
-    margin-right: 10px;
-    padding: 20px;
-    
-}
-
-/*
+  

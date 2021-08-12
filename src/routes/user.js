@@ -1,11 +1,23 @@
 const router = require('express').Router();
-const user = require('../controllers/user')
+const userController = require('../controllers/user')
+const passport = require('passport')
 
 // const customerController = require('../controllers/customerController');
 
-router.post('/login',user.login)
-router.get('/login',user.userLogin)
-router.get('/register',user.userRegister)
-router.post('/register',user.register)
+router.get('/login',checkAuthenticated,userController.userLogin)
+router.post('/login',passport.authenticate('login',{
+    successRedirect:'/products',
+    failureRedirect:'login'
+}))
+router.get('/register',checkAuthenticated,userController.userRegister)
+router.post('/register',userController.register)
+router.get('/logout', userController.userLogout);
+
+function checkAuthenticated(req, res, next) {
+    if(req.isAuthenticated()) {
+        return res.redirect('/products')
+    }
+    return next();
+  }
 
 module.exports = router
