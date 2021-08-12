@@ -1,46 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProSalud</title>
-    <link rel="stylesheet" href="/css/grid.css">
-    <link rel="stylesheet" href="/css/grid.css" type="text/css"/>
-</head>
-<body>
-    <header class="titulo">
-        <img src="/img/LogoProSalud.png" alt="">
-        <h1>"Mejoramos tu salud con nuestros productos"</h1>
-        <h2>Bienvenido <%=user.nombre%></h2>
-    </header>
-    
-    <nav>
-          <a href="#">Catalogo</a>
-          <a href="#">Blog</a>
-          <a href="#">Sevicios</a>
-          <a href="#">Contactos</a>
-    </nav>
 
-    <div class="container">
-        <% products.forEach(function (product) { %>
-                <div>
-                    <img src="/img/<%=product.foto%>" class="card-img-top" alt="prueba">
-                    <h2><%= product.nombre%></h2>
+<head>
+    <link rel="stylesheet" href="/css/grid.css" type="text/css" />
+    <link rel="shortcut icon" href="/img/raton.png">
+</head>
+
+<body>
+    <%- include('../components/header'); %>
+        <div class="container-grid">
+            <% products.forEach(function (product) { %>
+                <div class="card border-info">
+                    <img src="img/products/<%=product.foto%>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                            <h5 class="info-card-title"><%=product.nombre%></h5>
+                            <p class="card-text"><%=product.descripcion%></p>
+                        <a href="#" class="btn btn-primary">$<%=product.precio%></a>
+                    </div>
                 </div>
                 <% }) %>
-     
-    </div>
-    <footer>
-        <a href="#">Sobre Nosotros</a> 
-        <a href="#">Contactos</a>
-        <a class="fab fa-facebook" href="https://www.facebook.com/"></a>
-        <a class="fab fa-twitter-square" href="https://twitter.com/?lang=es"></a>
-        <a class="fab fa-whatsapp-square" href="https://www.whatsapp.com/?lang=es"></a>
-        <a class="fab fa-youtube-square" href="https://www.youtube.com/"></a>
-        
-        <script src="https://kit.fontawesome.com/2b4cefa1d3.js" crossorigin="anonymous"></script>
-        <p>Todos los Derechos Reservados 2021 &copy;</p>
-    </footer>
+        </div>
+        <%- include('../components/footer'); %>
 </body>
+
 </html>
