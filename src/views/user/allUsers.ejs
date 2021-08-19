@@ -1,0 +1,43 @@
+<%- include('../components/header'); %>
+<div class="contenedor">
+  <div class="into">
+    <div class="rinto">
+      <div class="row">
+        <div class="col-md-4 mx-auto">
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <td>Cedula</td>
+                <td>Nombre</td>
+                <td>Direccion</td>
+                <td>Telefono</td>
+                <td>Email</td>
+              </tr>
+            </thead>
+            <tbody>
+              <% if (users) { %> <% users.forEach(function (user) { %>
+              <tr>
+                <td><%= user.cedula %></td>
+                <td><%= user.nombre %></td>
+                <td><%= user.direccion %></td>
+                <td><%= user.telefono %></td>
+                <!-- talvez no sea necesario -->
+                <td><%= user.email %></td>
+                <td class="d-flex justify-content-between">
+                  <a href="/user/edit/<%= user.cedula %>" class="btn btn-info"
+                    >Edit</a
+                  >
+                  <a href="/delete/<%= user.cedula %>" class="btn btn-danger"
+                    >Delete</a
+                  >
+                </td>
+              </tr>
+              <% }) %> <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include('../components/footer'); %>
