@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%=title%></title>
-    <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-</head>
+    <link rel="stylesheet" href="/css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat:500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="/img/raton.png" />
+  </head>
 
-<body>
+  <body>
     <header>
-        <a class="logo" href="#"><img src="img/leftname.png" class="logo" alt="logo"> ProSalud</a>
-        <nav>
-            <ul class="nav__links">
-                <li><a href="/">Servicios</a></li>
-                <li><a href="/products">Productos</a></li>
-                <li><a href="#">Nosotros</a></li>
-            </ul>
-        </nav>
-        <% if (!user) { %>
-            <a class="cta" href="/user/login">iniciar sesion</a>
-            <% } else { %>
-                <a class="cta" href="/user/logout">cerrar sesion</a>
-                <% } %>
-                    <p class="menu cta">Menu</p>
+      <a class="logo" href="#"
+        ><img src="/img/leftname.png" class="logo" alt="logo" /> ProSalud</a
+      >
+      <nav>
+        <ul class="nav__links">
+          <li><a href="/">Servicios</a></li>
+          <li><a href="/products">Productos</a></li>
+          <li><a href="#">Nosotros</a></li>
+        </ul>
+      </nav>
+      <% if (!user) { %>
+      <a class="cta" href="/user/login">iniciar sesion</a>
+      <% } else { %>
+      <a class="cta" href="/user/logout">cerrar sesion</a>
+      <% } %>
+      <p class="menu cta">Menu</p>
     </header>
     <div class="overlay">
-        <a class="close">&times;</a>
-        <div class="overlay__content">
-            <a href="#">Services</a>
-            <a href="#">Projects</a>
-            <a href="#">About</a>
-        </div>
+      <a class="close">&times;</a>
+      <div class="overlay__content">
+        <a href="#">Services</a>
+        <a href="#">Projects</a>
+        <a href="#">About</a>
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
