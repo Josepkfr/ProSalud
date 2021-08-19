@@ -18,6 +18,7 @@ router.get("/logout", userController.userLogout);
 router.get("/all", userController.allUsers);
 router.get("/edit/:cedula", userController.getUser);
 router.post("/edit/:cedula", userController.editUser);
+router.get("/delete/:cedula", userController.deleteUser);
 
 function checkAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {

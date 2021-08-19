@@ -77,7 +77,15 @@ module.exports = {
         email,
         id
       );
-      console.log(sql);
+      await conexion.query(sql);
+    } catch (error) {
+      return error;
+    }
+  },
+
+  async dropUser(id) {
+    try {
+      const sql = format("delete from usuario where cedula=%L", id);
       await conexion.query(sql);
     } catch (error) {
       return error;

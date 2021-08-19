@@ -53,6 +53,15 @@ const user = {
       next(error);
     }
   },
+
+  async deleteUser(req, res, next) {
+    try {
+      await User.dropUser(req.params.cedula);
+      res.redirect("/user/all");
+    } catch (error) {
+      next(error);
+    }
+  },
 };
 
 module.exports = user;
