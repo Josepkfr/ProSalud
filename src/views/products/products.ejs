@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <link rel="stylesheet" href="/css/grid.css" type="text/css" />
-    <link rel="shortcut icon" href="/img/raton.png">
-</head>
+    <link rel="shortcut icon" href="/img/raton.png" />
+  </head>
 
-<body>
+  <body>
     <%- include('../components/header'); %>
-        <div class="container-grid">
-            <% products.forEach(function (product) { %>
-                <div class="card border-info">
-                    <img src="img/products/<%=product.foto%>" class="card-img-top" alt="...">
-                    <div class="card-body">
-                            <h5 class="info-card-title"><%=product.nombre%></h5>
-                            <p class="card-text"><%=product.descripcion%></p>
-                        <a href="#" class="btn btn-primary">$<%=product.precio%></a>
-                    </div>
-                </div>
-                <% }) %>
+    <div class="container-grid">
+      <% products.forEach(function (product) { %>
+      <div class="card border-info align-items-center justify-content-center">
+        <img
+          src="img/products/<%=product.foto%>"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body d-flex flex-column">
+          <h5 class="info-card-title"><%=product.nombre%></h5>
+          <p class="card-text"><%=product.descripcion%></p>
+          <a href="#" class="btn btn-primary mt-auto">$<%=product.precio%></a>
         </div>
-        <%- include('../components/footer'); %>
-</body>
-
+      </div>
+      <% }) %>
+    </div>
+    <%- include('../components/footer'); %>
+  </body>
 </html>
